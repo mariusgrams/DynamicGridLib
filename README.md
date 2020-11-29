@@ -3,13 +3,13 @@
 
 ![](https://img.shields.io/github/issues/mariusgrams/DynamicGridLib) ![](https://img.shields.io/github/forks/mariusgrams/DynamicGridLib) ![](https://img.shields.io/github/stars/mariusgrams/DynamicGridLib) ![](https://img.shields.io/github/license/mariusgrams/DynamicGridLib) 
 
-![](https://raw.githubusercontent.com/mariusgrams/DynamicGridLib/master/images/screen1.png)
+<img src="https://raw.githubusercontent.com/mariusgrams/DynamicGridLib/master/images/banner.png" alt="" style="max-width:100%;">
 
 Features
 -------------
-- bla
-- bla
-- bla
+- soon
+- soon
+- soon
 
 Install
 -------------
@@ -66,4 +66,4 @@ public class SimpleExampleFragment extends Fragment implements IViewCallback {
 
 Examples
 -------------
-Examples123
+soon
