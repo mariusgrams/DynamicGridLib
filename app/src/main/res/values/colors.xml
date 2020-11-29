@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="backgroundMain">#000000</color>
+
+    <color name="exampleItemBackground1">#6200EE</color>
+    <color name="exampleItemBackground2">#E65100</color>
+</resources>
