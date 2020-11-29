@@ -2,49 +2,56 @@ package com.mariusgrams.dynamicgridlib;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.LinearLayout;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.FrameLayout;
+import android.widget.ImageButton;
+import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.mariusgrams.dynamicgrid.DynamicGrid;
 import com.mariusgrams.dynamicgrid.GridItem;
 import com.mariusgrams.dynamicgrid.IViewCallback;
+import com.mariusgrams.dynamicgridlib.examples.HomeFragment;
+import com.mariusgrams.dynamicgridlib.examples.RandomItemsColor;
+import com.mariusgrams.dynamicgridlib.examples.SimpleExampleFragment;
 import com.mariusgrams.dynamicgridlib.gridItems.ExampleGridItem1;
 import com.mariusgrams.dynamicgridlib.gridItems.ExampleGridItem2;
 
-public class MainActivity extends AppCompatActivity implements IViewCallback {
+public class MainActivity extends AppCompatActivity {
 
-    private DynamicGrid dynamicGrid;
+    private static ImageButton ibtnBack;
+    private static FragmentManager fm;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        dynamicGrid = findViewById(R.id.dynamicGrid);
-        dynamicGrid.setFillWithEmptyItems(true);
-        dynamicGrid.setViewCallback(this);
+        fm = getSupportFragmentManager();
+        ibtnBack = findViewById(R.id.ibtnBack);
 
-        addItems();
+        ibtnBack.setOnClickListener(v -> switchFragment(new HomeFragment()));
 
-        dynamicGrid.build();
+        showBackButton(false);
+        switchFragment(new HomeFragment());
     }
 
-    private void addItems(){
-       dynamicGrid.addGridItem(new ExampleGridItem1(0, 0, 4, 2));
-       dynamicGrid.addGridItem(new ExampleGridItem2(4, 6, 3, 1));
+    public static void switchFragment(Fragment fragment){
+        FragmentTransaction transaction = fm.beginTransaction();
+        transaction.replace(R.id.rootLayout, fragment);
+        transaction.addToBackStack(fragment.toString());
+        transaction.commit();
     }
 
-    @Override
-    public View onViewCreate(GridItem gridItem) {
-
-        if(gridItem instanceof ExampleGridItem1){
-            return View.inflate(this, R.layout.example_item_1, null);
+    public static void showBackButton(boolean isBackButtonShown){
+        if(isBackButtonShown){
+            ibtnBack.setVisibility(View.VISIBLE);
+        }else{
+            ibtnBack.setVisibility(View.INVISIBLE);
         }
-
-        if(gridItem instanceof ExampleGridItem2){
-            return View.inflate(this, R.layout.example_item_2, null);
-        }
-
-        return null;
     }
 }
