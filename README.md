@@ -66,4 +66,9 @@ public class SimpleExampleFragment extends Fragment implements IViewCallback {
 
 Examples
 -------------
-soon
+ - SimpleExample
+ - RandomColor
+ - Dashboard (soon)
+ - Shop (soon)
+ - Feed (soon)
+ 
