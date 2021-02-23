@@ -3,4 +3,5 @@
     <color name="borderItem">#797777</color>
     <color name="backgroundEmptyItem">#32374D</color>
     <color name="fontBlack">#1C1C1C</color>
+    <color name="fontWhite">#ECECEC</color>
 </resources>

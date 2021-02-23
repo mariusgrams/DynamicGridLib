@@ -12,6 +12,7 @@ import android.widget.ListView;
 
 import com.mariusgrams.dynamicgridlib.MainActivity;
 import com.mariusgrams.dynamicgridlib.R;
+import com.mariusgrams.dynamicgridlib.examples.dashboard.DashboardFragment;
 
 
 public class HomeFragment extends Fragment {
@@ -34,6 +35,10 @@ public class HomeFragment extends Fragment {
                 }
                 case 1: {
                     MainActivity.switchFragment(new RandomItemsColor());
+                    break;
+                }
+                case 2: {
+                    MainActivity.switchFragment(new DashboardFragment());
                     break;
                 }
             }

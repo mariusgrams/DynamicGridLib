@@ -4,5 +4,6 @@
     <string-array name="examples">
         <item>Simple Example</item> //0
         <item>Random Item Color</item> //1
+        <item>Dashboard</item> //2
     </string-array>
 </resources>
