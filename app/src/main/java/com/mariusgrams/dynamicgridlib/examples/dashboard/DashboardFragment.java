@@ -37,7 +37,6 @@ public class DashboardFragment extends Fragment implements IViewCallback {
         dynamicGrid.setViewCallback(this);
 
         dynamicGrid.addGridItem(new TempGridItem(1, 1, 3, 4));
-        dynamicGrid.addGridItem(new CameraGridItem(5,0,3,8));
         dynamicGrid.build();
 
         return v;
@@ -52,11 +51,6 @@ public class DashboardFragment extends Fragment implements IViewCallback {
             return tempGridItemView;
         }
 
-        if(gridItem instanceof CameraGridItem){
-            CameraGridItemView cameraGridItemView = new CameraGridItemView(getContext());
-            cameraGridItemView.setGridItem(gridItem);
-            return cameraGridItemView;
-        }
 
         return null;
     }
